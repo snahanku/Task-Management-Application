@@ -33,7 +33,7 @@ and a filter option on right side
 
 upon clicking the filter
 ![image](https://github.com/snahanku/Task-Management-Application/assets/91967115/e8484066-35f9-4acd-8ec7-938f04388e4d)
-filter out data according  tothe parameters
+filter out data according  to the parameters
 
 
 
