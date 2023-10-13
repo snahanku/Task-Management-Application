@@ -1,0 +1,12 @@
+{% for  data in  user_data %}
+<div>
+<div>{{data.task_title}}</div>
+<div>{{data.task_desc}}</div>
+<input  type="submit" value="update" href="">
+<form action="{% url 'delete' data.id %}" method="post" class="d-inline">
+  {% csrf_token %}
+  <button type="submit" value=Submit class="btn">Done</button>
+</form>
+<div>
+  <br>
+{% endfor %}

@@ -1,0 +1,104 @@
+<h1>Hello welcome to the home page</h1>
+
+<form  action="" method="get">
+<div class="input-group">
+    <div class="form-outline">
+      <input type="search" id="search" name="search" class="form-control" />
+      <input type="submit" id="submit" name="submit" value=Submit>
+    </div>
+  </div>
+</form>
+
+{% for data in servicedata %}
+ <p><h2>{{data.task_desc}}</p>
+{% endfor %}
+
+
+
+<form method="get">
+<p>{{  filtered_task.as_p  }}</p>
+<input type="submit" value="enter">
+</form>
+
+<br>
+{%for data in filtered_task %}
+<h2>{{data.task_title}}</h2>
+<h2>{{data.task_desc}}</h2>
+{%endfor%}
+
+<form action="" method= "post">
+    {% csrf_token %}
+    <label >Task title</label>
+    <input type="text" id="title"name="title" placeholder="rohit" required >
+    </div>
+    <br> 
+    <div>
+        <label>Task Body</label>
+        <input type="text"  id ="body" name="body" placeholder="email" required>
+    </div>
+     <br>
+    <div>
+        <label>Task date </label>
+        <input type="date"  id ="date" name="date" placeholder="email" required>
+    </div>
+    <br>
+    <input type="submit" value="Submit" href="/api/create_task/">
+</form>
+
+<div>first data</div>
+<div> second data</div>
+<div>3rd data</div>
+<div>4th data</div>
+
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Full Name</td>
+            <td>Mobile</td>
+            <td>option</td>
+
+            <td>
+                <a href="/api/create_task/" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for user in user_list %}
+            <tr>
+                <td>{{user.task_title}}</td>
+                <td>{{user.task_desc}}</td>
+                <td><form action="{% url 'delete' user.id %}" method="post" class="d-inline">
+                    {% csrf_token %}
+                    <button type="submit" value=Submit class="btn">submit
+                        <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                    </button>
+                </form>
+            </td>
+                <td>
+                    <a href="" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+    </tbody>
+</table>
+<br>
+
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+      <li class="page-item" ><a class="page-link" href="/api/page/?page=1">First</a></li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+    </ul>
+  </nav>

@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <style>
+   
+    .main {
+        padding: 2%;
+        border-radius: 10px;
+        width: 17%;
+        position: absolute;
+        top: 50%;
+        left: 30%; /* Adjusted the left value */
+        transform: translateY(-50%);
+        opacity: 70%;
+        background-color: #fff;
+        font-weight: bold;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    }
+    
+    #form-container {
+      text-align: center;
+    }
+
+
+    .center position{
+       text-align: center;
+    }
+    /* Add more styling as needed */
+    form {
+      background-color: #f0f0f0;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    /* Add spacing between form elements */
+    form label,
+    form input,
+    form button {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    /* Center the submit button */
+    form button {
+      margin: 0 auto;
+    }
+
+    .center {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+      }
+  </style>
+  <title>Browser</title>
+</head>
+
+<body>
+    <div class="main">
+    <p ><h4> <center>Create Task</center></h4></p>
+  <div id="form-container">
+    <form action="" method="post">
+      {% csrf_token %}
+      <label>Task title</label>
+      <input type="text" id="title" name="title" placeholder="enter task title" required>
+
+      <label>Task Body</label>
+      <input type="text" id="body" name="body" placeholder="email" required>
+
+     <br>
+     <br>
+      <button> Submit</button>
+    </form>
+  </div>
+</div>
+</body>
+
+</html>
